@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="card w-25">
+    <h4 class="text-center">PERSONAS REGISTRADAS</h4>
+    <ul class="list-group" *ngFor="let persona of personas">
+      <li class="list-group-item">{{persona.nombre}}</li>
+    </ul>
+  </div>
+  <div class="card w-50">
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <p>Persona: </p>
+        </div>
+        <div class="form-group">
+          <input autocomplete="off" class="form-control" type="text" name="persona" [(ngModel)]="personaab.nombre"
+            placeholder="Nombre de la persona que adoptará">
+        </div>
+        <div class="form-group">
+          <p>Adoptará: </p>
+        </div>
+        <div class="form-group">
+          <input autocomplete="off" class="form-control" type="text" name="mascota" [(ngModel)]="animalab.nombre"
+            placeholder="Nombre de la mascota a adoptar">
+        </div>
+        <button class="btn btn-success btn-block" (click)="adoptar()">
+          ADOPTAR <i class="fas fa-heart"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="card w-25">
+    <h4 class="text-center">ANIMALES DISPONIBLES</h4>
+    <ul class="list-group" *ngFor="let animal of animales">
+      <li class="list-group-item">{{animal.nombre}}</li>
+    </ul>
+  </div>
+</div>

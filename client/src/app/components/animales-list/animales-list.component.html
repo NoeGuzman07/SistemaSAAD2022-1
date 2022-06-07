@@ -1,0 +1,30 @@
+<div class="row col-md-4">
+  <div class="form-group">
+  <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-primary" routerLink="/animales">TODOS</button>
+    <button type="button" class="btn btn-primary" routerLink="/animales/adoptados">ADOPTADOS</button>
+    <button type="button" class="btn btn-primary" routerLink="/animales/noadoptados">NO ADOPTADOS</button>
+  </div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4" *ngFor="let animal of animales">
+  <div class="card text-center">
+    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+      {{animal.nombre}}
+      <button class="btn btn-danger" (click)="deleteAnimal(animal.id_animal)">
+        <i class="far fa-trash-alt"></i>
+      </button>
+    </div>
+    <img [src]="animal.imagen" class="card-img-top">
+    <div class="card-body">
+      <p>Especie: {{animal.especie}}</p>
+      <p>Edad: {{animal.edad}}</p>
+      <p>Estado: {{animal.estado}}</p>
+      <a [routerLink]="['/animales/edit', animal.id_animal]" class="btn btn-info btn-block">
+        EDITAR ANIMAL
+      </a>
+    </div>
+  </div>
+</div>
+</div>

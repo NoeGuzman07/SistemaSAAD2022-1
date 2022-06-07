@@ -1,0 +1,32 @@
+<div class="col-md-4 offset-md-2">
+  <div class="card">
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <input autocomplete="off" type="text" name="nombre" [(ngModel)]="animal.nombre" placeholder="Nombre" class="form-control" autofocus>
+        </div>
+        <div class="form-group">
+          <input autocomplete="off" type="text" name="especie" [(ngModel)]="animal.especie" placeholder="Especie" class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="number" name="edad" [(ngModel)]="animal.edad" placeholder="Edad" class="form-control">
+        </div>
+        <div class="form-group">
+          <input autocomplete="off" type="url" name="imagen" [(ngModel)]="animal.imagen" placeholder="URL de la imagen" class="form-control">
+        </div>
+        <button class="btn btn-success btn-block" (click)="edit ? updateAnimal() : saveNewAnimal()">
+          Guardar <i class="fas fa-check"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card card-body text-center">
+    <img [src]="animal.imagen == '' ? 'https://www.laarcom.com/uploads/productos/no-image.png?v04212022' : animal.imagen" class="card-img-top">
+    <h3>{{animal.nombre == '' ? 'Inserte nombre' : animal.nombre}}</h3>
+    <p>{{animal.especie == '' ? 'Sin especie' : animal.especie}}</p>
+    <p>{{animal.edad}}</p>
+  </div>
+</div>

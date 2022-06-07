@@ -1,0 +1,17 @@
+<div class="col-md-4 offset-md-4">
+  <div class="card">
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <input autocomplete="off" type="text" name="nombre"  [(ngModel)]="persona.nombre" placeholder="Nombre" class="form-control" autofocus>
+        </div>
+        <div class="form-group">
+          <textarea name="direccion" [(ngModel)]="persona.direccion" rows="2" placeholder="Escriba su dirección" class="form-control"></textarea>
+        </div>
+        <button class="btn btn-success btn-block" (click)="saveNewPersona()">
+          Guardar <i class="fas fa-check"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
